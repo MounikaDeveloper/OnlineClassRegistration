@@ -1,0 +1,53 @@
+{% extends 'common.html' %}
+{% block pwn %}
+    {% include 'adminmenu.html' %}
+  <form action="http://127.0.0.1:5000/savecourse" method="post">
+  <table align="center" style="margin-top: 2%" border="2">
+      <tr style="color: darkorchid">
+          <th><h3>Schedule New class</h3></th>
+      </tr>
+      <tr>
+          <th>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Name" name="name">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Faculty" name="faculty">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Date" name="date">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="time" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Time" name="time">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Fee" name="fee">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Duration" name="duration">
+          </th>
+      </tr>
+      <tr>
+          <th style="text-align: center">
+              <button type="submit" class="btn btn-danger">Register</button>
+          </th>
+      </tr>
+  </table>
+
+    </form>
+{% endblock %}

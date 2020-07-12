@@ -1,0 +1,33 @@
+{% extends 'common.html' %}
+
+{% block pwn %}
+    <style>
+    form{
+        padding-top: 5%;
+    }
+    </style>
+    <form action="http://127.0.0.1:5000/validate_admin" method="post">
+    <div style="margin-left: 30%">
+        <h2 style="margin-left: 15%;padding-bottom: 2%">Admin Login</h2>
+      <div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">Username:</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="inputName"  name="uname" placeholder="Username">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+    </div>
+  </div>
+        <button type="submit" class="btn btn-primary"  style="margin-left: 20%;padding-bottom: 2%;">Login</button>
+        </div>
+</form>
+    {% if msg %}
+
+   <h4 align="center" style="margin-top: 1%"> {{ msg.message }}</h4>
+{% endif %}
+
+{% endblock %}
