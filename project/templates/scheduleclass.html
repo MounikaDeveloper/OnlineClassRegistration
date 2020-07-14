@@ -50,4 +50,7 @@
   </table>
 
     </form>
+    {% if message %}
+        <h1 style="text-align: center;color: darkgoldenrod;padding-top: 10px;margin-bottom: 20px;">{{ message }}</h1>
+    {% endif %}
 {% endblock %}

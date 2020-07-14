@@ -1,0 +1,37 @@
+{% extends 'common.html' %}
+{% block pwn %}
+    {% include 'adminmenu.html' %}
+    <table border="2" style="text-align: center;margin-top: 4%;" align="center" cellpadding="10px">
+    <tr style="background-color: darkkhaki;color: yellow;">
+        <th colspan="9">View All Schedule Class</th>
+    </tr>
+    <tr style="background-color: darkcyan;color: darkkhaki">
+        <th>Course Number</th>
+        <th>Course Name</th>
+        <th>Faculty Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Fee</th>
+        <th>Duration</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        {% for y in x %}
+            <th>{{ y }}</th>
+            {% endfor %}
+        <th>
+            <a href="http://127.0.0.1:5000/updateclass?u={{ x[0] }}">
+                <img src="{{ url_for('static',filename='images/update.png')}}" >
+            </a>
+        </th>
+         <th>
+            <a>
+                <img src="{{ url_for('static',filename='images/delete.png')}}" >
+            </a>
+        </th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

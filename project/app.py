@@ -50,9 +50,24 @@ def saveCourse():
     curs.execute("insert into course values(?,?,?,?,?,?,?)",(cno,name,faculty,date,time,fee,duration))
     conn.commit()
     conn.close()
-    return render_template('adminwelcome.html')
+    return render_template('scheduleclass.html',message="Saved Successfully")
 
+@app.route('/viewscheduleclass')
+def viewScheduleClass():
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("select * from course")
+    res=curs.fetchall()
+    return render_template('viewclass.html',data=res)
 
+@app.route('/updateclass')
+def updateClass():
+    no=request.args.get('u')
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("select *from course where cno=?",(no,))
+    res = curs.fetchone()
+    return render_template('update_scheduleclass.html',data=res)
 
 if __name__ == '__main__':
     app.run(debug=True)
