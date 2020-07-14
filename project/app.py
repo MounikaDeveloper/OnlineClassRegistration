@@ -69,5 +69,31 @@ def updateClass():
     res = curs.fetchone()
     return render_template('update_scheduleclass.html',data=res)
 
+@app.route('/update',methods=['POST'])
+def update():
+    no=request.form.get("no")
+    name = request.form.get("name")
+    faculty = request.form.get("faculty")
+    date = request.form.get("date")
+    time = request.form.get("time")
+    fee = request.form.get("fee")
+    duration = request.form.get("duration")
+    print(no,name, faculty, date, time, fee, duration)
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    res=curs.execute("update course SET course_name=?,faculty_name=?,class_date=?,class_time=?,fee=?,duration=? where cno=?", (name,faculty,date,time,fee,duration,no))
+    conn.commit()
+    return viewScheduleClass()
+
+@app.route('/deleteclass')
+def deleteClass():
+    no=request.args.get('u')
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    res = curs.execute(
+        "delete from course where cno=?",(no,))
+    conn.commit()
+    return viewScheduleClass()
+
 if __name__ == '__main__':
     app.run(debug=True)

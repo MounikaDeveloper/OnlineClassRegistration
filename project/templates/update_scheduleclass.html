@@ -1,0 +1,57 @@
+{% extends 'common.html' %}
+{% block pwn %}
+    {% include 'adminmenu.html' %}
+
+  <form action="http://127.0.0.1:5000/update" method="post">
+  <table align="center" style="margin-top: 2%" border="2">
+
+      <tr style="color: darkorchid">
+          <th><h3>Update Schedule class</h3></th>
+      </tr>
+
+      <tr><th><input type="hidden" value="{{ data[0] }}" name="no"></th></tr>
+      <tr>
+          <th>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Name" name="name" value={{ data[1] }}>
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Faculty" name="faculty" value={{ data[2] }}>
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Date" name="date" value="{{ data[3] }}">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="time" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Time" name="time" value="{{ data[4] }}">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Fee" name="fee" value="{{ data[5] }}">
+          </th>
+      </tr>
+      <tr>
+          <th>
+              <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                     placeholder="Duration" name="duration" value="{{ data[6] }}">
+          </th>
+      </tr>
+      <tr>
+          <th style="text-align: center">
+              <button type="submit" class="btn btn-danger">Update</button>
+          </th>
+      </tr>
+
+  </table>
+    </form>
+{% endblock %}
