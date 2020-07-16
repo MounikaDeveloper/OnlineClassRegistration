@@ -95,5 +95,10 @@ def deleteClass():
     conn.commit()
     return viewScheduleClass()
 
+@app.route('/main')
+def student():
+    return render_template('main.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
