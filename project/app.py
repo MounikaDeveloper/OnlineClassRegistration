@@ -97,8 +97,48 @@ def deleteClass():
 
 @app.route('/main')
 def student():
-    return render_template('main.html')
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("select *from course")
+    res = curs.fetchall()
+    print(res)
+    return render_template('main.html',data=res)
 
+@app.route('/register')
+def register():
+    return render_template('student_registration.html')
 
+@app.route('/regsave',methods=['POST','GET'])
+def saveRegistration():
+    name = request.form.get('name')
+    contact = request.form.get('contact')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    try:
+        curs.execute("insert into student_registration values(?,?,?,?)",(name,contact,email,password))
+        conn.commit()
+        conn.close()
+        return render_template('student_login.html')
+    except:
+        return render_template('student_registration.html',data="Name or Contactus already registered")
+
+@app.route('/studentlogin',methods=['POST','GET'])
+def student_login():
+    uname=request.form.get('uname')
+    pwd = request.form.get('password')
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("select *from student_registration")
+    res = curs.fetchall()
+    for x in res:
+        if uname==x[0] and pwd==x[3]:
+            print(uname,x[0],pwd,x[3])
+            return render_template('welcomestudent.html')
+        else:
+            return render_template('student_login.html',data="Invalid credintials")
+
+    return render_template('student_login.html')
 if __name__ == '__main__':
     app.run(debug=True)

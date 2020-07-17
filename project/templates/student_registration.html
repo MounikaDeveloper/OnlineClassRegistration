@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+{% block pwn %}
+    <style>
+    .div1{
+        margin-left: 30%;
+    }
+    </style>
+    <div class="div1">
+    {% include 'studentmenu.html' %}
+        </div>
+    <form action="http://127.0.0.1:5000/regsave" method="post">
+    <table align="center" cellpadding="20px">
+        <tr>
+            <th colspan="2" style="text-align: center">Student Registration</th>
+        </tr>
+        <tr>
+            <th>Name:</th>
+            <th><input type="text" name="name" placeholder="Name" required></th>
+        </tr>
+           <tr>
+            <th>Contact US:</th>
+            <th><input type="number" name="contact" placeholder="Contact Us" required></th>
+        </tr>
+              <tr>
+            <th>Email:</th>
+            <th><input type="email" name="email" placeholder="Email" required></th>
+        </tr>
+              <tr>
+            <th>Password:</th>
+            <th><input type="password" name="password" placeholder="Password" required></th>
+        </tr>
+        <tr>
+            <th style="text-align: center" colspan="2">
+                <button type="submit">Register</button>
+            </th>
+        </tr>
+    </table>
+    </form>
+    {% if data %}
+        <h4 style="text-align: center;color: darkorange">{{ data }}</h4>
+    {% endif %}
+{% endblock %}

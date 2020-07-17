@@ -1,0 +1,26 @@
+{% extends 'common.html' %}
+{% block pwn %}
+    <div style="margin-left: 30%">{% include 'studentmenu.html' %}</div>
+    <form action="http://127.0.0.1:5000/studentlogin" method="post">
+    <table style="alignment: center;margin-left: 30%" cellpadding="20px">
+    <tr>
+        <th colspan="2" style="text-align: center">Student Login</th>
+    </tr>
+    <tr>
+        <th>Username:</th>
+        <th><input type="text" name="uname" placeholder="Username" required></th>
+    </tr>
+     <tr>
+        <th>Password:</th>
+        <th><input type="password" name="password" placeholder="Password" required></th>
+    </tr>
+    <tr>
+        <th colspan="2" style="text-align: center">
+            <button type="submit">Login</button></th>
+    </tr>
+    </table>
+    </form>
+    {% if data %}
+        <h3 style="color: red;text-align: center">{{ data }}</h3>
+    {% endif %}
+{% endblock %}

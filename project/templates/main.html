@@ -6,19 +6,45 @@
         margin-left: 30%;
         color:green;
     }
-
+    img
+    {
+        alignment: center;
+        width:600px;
+        height: 300px;
+    }
     </style>
     <div class="div1">
     {% include 'studentmenu.html' %}
         </div>
-    <div>
-    <img src="{{ url_for('static',filename='images/courses.jpg')}}">
-    </div>
+
     <table>
     <tr>
         <th>
-            
+             <img src="{{ url_for('static',filename='images/courses.jpg')}}">
+        </th>
+        <th>
+
+            <table border="2px" style="width: 500px;height: 300px" cellpadding="20px">
+
+                <tr>
+                  <th colspan="2">Available Courses</th>
+ {% for x in data %}
+
+                    <th>
+
+                        Courses:{{ x[1] }}<br>
+                        Date:   {{ x[3] }} <br>
+                        Faculty:{{ x[2] }}<br>
+                        Time:{{ x[4] }}<br>
+                        Fee:{{ x[5] }}<br>
+                        Duration:{{ x[6] }}days<br>
+
+                    </th>
+ {% endfor %}
+                </tr>
+
+            </table>
         </th>
     </tr>
-    </table>
+    </table><br><br>
 {% endblock %}
