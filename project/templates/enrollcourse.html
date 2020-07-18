@@ -1,0 +1,38 @@
+{% extends 'common.html' %}
+{% block pwn %}
+    <style>
+    div{
+        margin-left: 15%;
+        margin-bottom: 1%;
+    }
+    </style>
+    <div>
+    {% include 'enrollmentmenu.html' %}
+    </div>
+    <table align="center" border="2">
+    <tr>
+        <th>Name</th>
+        <th>Faculty</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Fee</th>
+        <th>Duration</th>
+        <th>Enroll</th>
+    </tr>
+    {% for x in data %}
+
+    <tr>
+
+            <th>{{ x[1] }}</th>
+                <th>{{ x[2] }}</th>
+                 <th>{{ x[3] }}</th>
+                 <th>{{ x[4] }}</th>
+                 <th>{{ x[5] }}</th>
+                 <th>{{ x[6] }}</th>
+                <th><a href="http://127.0.0.1:5000/enrollsave?x={{ x[0] }}">Yes</a></th>
+
+
+    </tr>
+     {% endfor %}
+    </table>
+{% endblock %}

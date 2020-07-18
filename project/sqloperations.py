@@ -8,6 +8,14 @@ def createCourseTable():
 
 def createStudentLoginTable():
     curs.execute(
-        "create table student_registration(name text unique,contactus number unique,email text,password text)")
+        "create table student_registration(id number primary key,name text unique,contactus number unique,email text,password text)")
     print("student table is created")
-createStudentLoginTable()
+
+
+def studentEnrollment():
+    curs.execute("create table studentenrollment(studentcontactinfo number,"
+                 "courseid number,"
+                 "foreign key (studentcontactinfo) references student_registration(id),"
+                 "foreign key(courseid) references course(cno))")
+    print("student enrollment table is created")
+studentEnrollment()

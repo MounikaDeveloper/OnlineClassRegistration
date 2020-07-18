@@ -101,7 +101,6 @@ def student():
     curs = conn.cursor()
     curs.execute("select *from course")
     res = curs.fetchall()
-    print(res)
     return render_template('main.html',data=res)
 
 @app.route('/register')
@@ -116,15 +115,25 @@ def saveRegistration():
     password = request.form.get('password')
     conn = sql.connect("mounika.sqlite2")
     curs = conn.cursor()
+    curs.execute("select max(id)from student_registration")
+    res = curs.fetchone()
+    if res[0]:
+        id = res[0] + 1
+    else:
+        id = 1
     try:
-        curs.execute("insert into student_registration values(?,?,?,?)",(name,contact,email,password))
+        curs.execute("insert into student_registration values(?,?,?,?,?)",(id,name,contact,email,password))
         conn.commit()
         conn.close()
         return render_template('student_login.html')
     except:
         return render_template('student_registration.html',data="Name or Contactus already registered")
 
-@app.route('/studentlogin',methods=['POST','GET'])
+@app.route('/loginstudent')
+def loginstudent():
+    return render_template('student_login.html')
+
+@app.route('/studentlogin',methods=['POST'])
 def student_login():
     uname=request.form.get('uname')
     pwd = request.form.get('password')
@@ -132,13 +141,28 @@ def student_login():
     curs = conn.cursor()
     curs.execute("select *from student_registration")
     res = curs.fetchall()
+    print(res)
     for x in res:
-        if uname==x[0] and pwd==x[3]:
-            print(uname,x[0],pwd,x[3])
-            return render_template('welcomestudent.html')
-        else:
-            return render_template('student_login.html',data="Invalid credintials")
+        if uname==x[1] and pwd==x[4]:
+            print(uname,x[1],pwd,x[4])
+            return render_template('welcomestudent.html',data=uname)
 
-    return render_template('student_login.html')
+    return render_template('student_login.html',data="Invalid Credentials")
+
+@app.route('/enrollcourse')
+def enrollcourse():
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("Select *from course")
+    res=curs.fetchall()
+    return render_template('enrollcourse.html',data=res)
+
+@app.route('/enrollsave',methods=['POST'])
+def enrollsave():
+    cno=request.args.get('x')
+    request.form.get('name')
+
+    return None
+
 if __name__ == '__main__':
     app.run(debug=True)

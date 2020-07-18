@@ -1,5 +1,22 @@
 {% extends 'common.html' %}
 {% block pwn %}
-    {% include 'studentmenu.html' %}
-    Welcome
+    <style>
+    div{
+        text-align: center;
+    }
+    .div1{
+        margin-left: 25%;
+    }
+    h2{
+        height:300px;
+    }
+    </style>
+    <div class="div1">
+    {% include 'enrollmentmenu.html' %}
+    </div>
+    <div>
+    <h1>WELCOME</h1>
+    <h2 style="color:darkkhaki">Mr/Miss:{{ data }}</h2>
+    </div>
+
 {% endblock %}
