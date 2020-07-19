@@ -13,9 +13,10 @@ def createStudentLoginTable():
 
 
 def studentEnrollment():
-    curs.execute("create table studentenrollment(studentcontactinfo number,"
+    curs.execute("create table studentenrollment(studentid number,"
                  "courseid number,"
-                 "foreign key (studentcontactinfo) references student_registration(id),"
+                 "foreign key (studentid) references student_registration(id),"
                  "foreign key(courseid) references course(cno))")
     print("student enrollment table is created")
 studentEnrollment()
+# curs.execute("drop table studentenrollment")

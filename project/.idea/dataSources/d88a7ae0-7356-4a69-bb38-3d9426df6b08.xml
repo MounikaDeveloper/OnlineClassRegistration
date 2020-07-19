@@ -127,7 +127,7 @@
       <ColNames>contactus</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_student_registration_3</UnderlyingIndexName>
     </key>
-    <column id="35" parent="9" name="studentcontactinfo">
+    <column id="35" parent="9" name="studentid">
       <Position>1</Position>
       <DataType>number|0s</DataType>
     </column>
@@ -136,7 +136,7 @@
       <DataType>number|0s</DataType>
     </column>
     <foreign-key id="37" parent="9">
-      <ColNames>studentcontactinfo</ColNames>
+      <ColNames>studentid</ColNames>
       <RefTableName>student_registration</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>

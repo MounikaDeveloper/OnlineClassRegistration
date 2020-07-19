@@ -2,26 +2,25 @@
 {% block pwn %}
     <style>
     div{
-        margin-left: 15%;
-        margin-bottom: 1%;
+        margin-left: 10%;
     }
     </style>
     <div>
     {% include 'enrollmentmenu.html' %}
     </div>
-    <table align="center" border="2">
+    <table align="center" border="1" style="margin-top: 3%" cellpadding="20">
     <tr>
-        <th>Name</th>
-        <th>Faculty</th>
+        <th>Course Name</th>
+        <th>Faculty Name</th>
         <th>Date</th>
         <th>Time</th>
         <th>Fee</th>
         <th>Duration</th>
-        <th>Enroll</th>
+        <th>Cancel Enrolled Course</th>
     </tr>
-    {% for x in data %}
-
+     {% for x in data %}
     <tr>
+
 
             <th>{{ x[1] }}</th>
                 <th>{{ x[2] }}</th>
@@ -29,11 +28,10 @@
                  <th>{{ x[4] }}</th>
                  <th>{{ x[5] }}</th>
                  <th>{{ x[6] }}</th>
-                <th><a href="http://127.0.0.1:5000/enrollsave?x={{ x[0] }}">Yes</a></th>
-
+         <th><a href="http://127.0.0.1:5000/cancelenroll?cno={{ x[0] }}">Yes</a></th>
+                {% endfor %}
 
     </tr>
-     {% endfor %}
+
     </table>
-    <h3 align="center" style="color: red;margin-top: 2%">{{ data1 }}</h3>
 {% endblock %}

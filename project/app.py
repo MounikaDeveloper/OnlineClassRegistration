@@ -1,12 +1,13 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import session
 
 import sqlite3 as sql
 
 app = Flask(__name__)
 
-
+app.secret_key="mouni" #session secret key was set
 @app.route('/admin')
 def admin_login():
     return render_template('adminlogin.html')
@@ -141,11 +142,15 @@ def student_login():
     curs = conn.cursor()
     curs.execute("select *from student_registration")
     res = curs.fetchall()
-    print(res)
+    # print(res)
     for x in res:
         if uname==x[1] and pwd==x[4]:
-            print(uname,x[1],pwd,x[4])
-            return render_template('welcomestudent.html',data=uname)
+            session['user']=uname # session created
+
+            session['id']=x[0]
+            # print(session['id'])
+            # print(uname,x[1],pwd,x[4])
+            return render_template('welcomestudent.html',data=session['user'])
 
     return render_template('student_login.html',data="Invalid Credentials")
 
@@ -157,12 +162,52 @@ def enrollcourse():
     res=curs.fetchall()
     return render_template('enrollcourse.html',data=res)
 
-@app.route('/enrollsave',methods=['POST'])
+@app.route('/enrollsave',methods=['GET'])
 def enrollsave():
     cno=request.args.get('x')
-    request.form.get('name')
+    id=session['id']
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("select *from studentenrollment")
+    res=curs.fetchall()
+    if res:
+        print(res)
+        for x in res:
+            if x[1]==int(cno):
+                curs.execute("Select *from course")
+                res = curs.fetchall()
+                return render_template('enrollcourse.html',data1="Course already registered",data=res)
 
-    return None
+
+    curs.execute("insert into studentenrollment values(?,?)", (id, cno))
+    conn.commit()
+
+    return render_template('viewallenrolledcourses.html')
+
+@app.route('/viewenrolledcourse',methods=['GET'])
+def viewEnrolledCourse():
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("select course.cno,course.course_name,course.faculty_name,course.class_date,course.class_time,course.fee,course.duration from course"
+                 " join studentenrollment on studentenrollment.courseid=course.cno")
+
+    res = curs.fetchall()
+    # print(res)
+    return render_template('viewenrollcourse.html',data=res)
+
+@app.route('/cancelenroll')
+def cancelEnroll():
+    cno=request.args.get('cno')
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    curs.execute("delete from studentenrollment where courseid=?",(cno,))
+    conn.commit()
+    curs.execute(
+        "select course.cno,course.course_name,course.faculty_name,course.class_date,course.class_time,course.fee,course.duration from course"
+        " join studentenrollment on studentenrollment.courseid=course.cno")
+
+    res = curs.fetchall()
+    return render_template('viewenrollcourse.html',data=res)
 
 if __name__ == '__main__':
     app.run(debug=True)
