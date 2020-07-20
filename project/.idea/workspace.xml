@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4059bb69-fe38-4bb1-84bb-159edf1fe47e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/viewallenrolledcourses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/viewenrollcourse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d88a7ae0-7356-4a69-bb38-3d9426df6b08.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d88a7ae0-7356-4a69-bb38-3d9426df6b08.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mounika.sqlite2" beforeDir="false" afterPath="$PROJECT_DIR$/mounika.sqlite2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqloperations.py" beforeDir="false" afterPath="$PROJECT_DIR$/sqloperations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/enrollcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/enrollcourse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/enrollmentmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/enrollmentmenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/scheduleclass.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/scheduleclass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewenrollcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewenrollcourse.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/project$sqloperations.coverage" NAME="sqloperations Coverage Results" MODIFIED="1595147015810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/project$project.coverage" NAME="project Coverage Results" MODIFIED="1595151344879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/project$project.coverage" NAME="project Coverage Results" MODIFIED="1595235792485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -114,54 +111,58 @@
     <session id="-1026593001">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.102" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.67" value="1" />
           <entry key="project.open.time.85" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="18" />
-          <entry key="html" value="3563" />
-          <entry key="py" value="4287" />
+          <entry key="html" value="3613" />
+          <entry key="py" value="4742" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3563" />
-          <entry key="Python" value="4281" />
-          <entry key="SQL" value="6" />
+          <entry key="HTML" value="3613" />
+          <entry key="Python" value="4734" />
+          <entry key="SQL" value="8" />
           <entry key="Scratch" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="course" value="14" />
-          <entry key="html" value="28" />
-          <entry key="py" value="1" />
+          <entry key="course" value="15" />
+          <entry key="html" value="32" />
+          <entry key="png" value="2" />
+          <entry key="py" value="3" />
           <entry key="sqlite_master" value="3" />
-          <entry key="student_registration" value="11" />
-          <entry key="studentenrollment" value="9" />
+          <entry key="student_registration" value="14" />
+          <entry key="studentenrollment" value="14" />
           <entry key="url" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Database Element" value="37" />
-          <entry key="HTML" value="28" />
+          <entry key="Database Element" value="46" />
+          <entry key="HTML" value="32" />
+          <entry key="Image" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="1" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -169,30 +170,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.py">
+        <entry file="file://$PROJECT_DIR$/templates/adminmenu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1595153528675" expanded="true" signature="922:6894" ph="..." />
-                <marker date="1595153528675" expanded="true" signature="2838:6894" ph="..." />
-                <marker date="1595153528675" expanded="true" signature="4196:4247" ph="..." />
-                <marker date="1595153528675" expanded="true" signature="5221:6894" ph="..." />
-                <marker date="1595153528675" expanded="true" signature="6377:6894" ph="..." />
-              </folding>
+            <state relative-caret-position="291">
+              <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/viewallenrolledcourses.html">
+        <entry file="file://$PROJECT_DIR$/templates/studentmenu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding>
-                <element signature="e#222#245#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -200,8 +190,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/enrollmentmenu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -209,11 +199,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/viewenrollcourse.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-              <folding>
-                <element signature="e#208#230#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sqloperations.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -238,7 +234,6 @@
         <option value="$PROJECT_DIR$/templates/admin_login.html" />
         <option value="$PROJECT_DIR$/templates/adminlogin.html" />
         <option value="$PROJECT_DIR$/templates/adminwelcome.html" />
-        <option value="$PROJECT_DIR$/templates/scheduleclass.html" />
         <option value="$PROJECT_DIR$/templates/adminmenu.html" />
         <option value="$PROJECT_DIR$/templates/common.html" />
         <option value="$PROJECT_DIR$/templates/update_scheduleclass.html" />
@@ -250,10 +245,11 @@
         <option value="$PROJECT_DIR$/templates/welcomestudent.html" />
         <option value="$PROJECT_DIR$/sqloperations.py" />
         <option value="$PROJECT_DIR$/templates/enrollcourse.html" />
-        <option value="$PROJECT_DIR$/templates/enrollmentmenu.html" />
-        <option value="$PROJECT_DIR$/templates/viewenrollcourse.html" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/viewallenrolledcourses.html" />
+        <option value="$PROJECT_DIR$/templates/viewenrollcourse.html" />
+        <option value="$PROJECT_DIR$/templates/enrollmentmenu.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/scheduleclass.html" />
       </list>
     </option>
   </component>
@@ -263,7 +259,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="527" />
     <option name="width" value="834" />
     <option name="height" value="744" />
@@ -401,7 +397,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.31240544" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3214826" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.3289689" />
@@ -411,7 +407,7 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.2782324" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.10310966" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -469,24 +465,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminmenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/adminwelcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/scheduleclass.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -530,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/studentmenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/www.w3schools.com.url" />
     <entry file="file://$PROJECT_DIR$/templates/welcomestudent.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -549,13 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sqloperations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -576,34 +544,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d88a7ae0-7356-4a69-bb38-3d9426df6b08/schema/main/table/student_registration">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="2467" lean-forward="true" selection-start-line="2467" selection-end-line="2467" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/enrollmentmenu.html">
+    <entry file="file://$PROJECT_DIR$/templates/viewallenrolledcourses.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/viewenrollcourse.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding>
-            <element signature="e#208#230#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="das://d88a7ae0-7356-4a69-bb38-3d9426df6b08/schema/main/table/studentenrollment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/sqloperations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/studentmenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/enrollmentmenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/delete.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project screenshots/adminhome.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/scheduleclass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1595238179909" expanded="true" signature="1026:7405" ph="..." />
+            <marker date="1595238179909" expanded="true" signature="2942:7405" ph="..." />
+            <marker date="1595238179909" expanded="true" signature="4300:4351" ph="..." />
+            <marker date="1595238179909" expanded="true" signature="5325:7405" ph="..." />
+            <marker date="1595238179909" expanded="true" signature="6615:7405" ph="..." />
+            <marker date="1595238179909" expanded="true" signature="7354:7405" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -614,28 +622,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/viewallenrolledcourses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#222#245#0#HTML" expanded="true" />
-          </folding>
+    <entry file="das://d88a7ae0-7356-4a69-bb38-3d9426df6b08/schema/main/table/studentenrollment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="das://d88a7ae0-7356-4a69-bb38-3d9426df6b08/schema/main/table/student_registration">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminmenu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1595153528675" expanded="true" signature="922:6894" ph="..." />
-            <marker date="1595153528675" expanded="true" signature="2838:6894" ph="..." />
-            <marker date="1595153528675" expanded="true" signature="4196:4247" ph="..." />
-            <marker date="1595153528675" expanded="true" signature="5221:6894" ph="..." />
-            <marker date="1595153528675" expanded="true" signature="6377:6894" ph="..." />
-          </folding>
+        <state relative-caret-position="291">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
         </state>
       </provider>
     </entry>

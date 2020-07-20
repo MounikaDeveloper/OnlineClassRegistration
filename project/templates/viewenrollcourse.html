@@ -16,6 +16,7 @@
         <th>Time</th>
         <th>Fee</th>
         <th>Duration</th>
+        <th>Studentnumber</th>
         <th>Cancel Enrolled Course</th>
     </tr>
      {% for x in data %}
@@ -28,6 +29,7 @@
                  <th>{{ x[4] }}</th>
                  <th>{{ x[5] }}</th>
                  <th>{{ x[6] }}</th>
+         <th>{{ x[7] }}</th>
          <th><a href="http://127.0.0.1:5000/cancelenroll?cno={{ x[0] }}">Yes</a></th>
                 {% endfor %}
 

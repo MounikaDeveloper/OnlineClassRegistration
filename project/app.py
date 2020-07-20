@@ -2,12 +2,13 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import session
-
+from datetime import timedelta
 import sqlite3 as sql
 
 app = Flask(__name__)
 
 app.secret_key="mouni" #session secret key was set
+app.permanent_session_lifetime=timedelta(minutes=5) #session time was set
 @app.route('/admin')
 def admin_login():
     return render_template('adminlogin.html')
@@ -173,7 +174,7 @@ def enrollsave():
     if res:
         print(res)
         for x in res:
-            if x[1]==int(cno):
+            if x[1]==int(cno) and x[0]==id:
                 curs.execute("Select *from course")
                 res = curs.fetchall()
                 return render_template('enrollcourse.html',data1="Course already registered",data=res)
@@ -188,26 +189,38 @@ def enrollsave():
 def viewEnrolledCourse():
     conn = sql.connect("mounika.sqlite2")
     curs = conn.cursor()
-    curs.execute("select course.cno,course.course_name,course.faculty_name,course.class_date,course.class_time,course.fee,course.duration from course"
-                 " join studentenrollment on studentenrollment.courseid=course.cno")
+    id = session['id']
+
+    curs.execute("select course.cno,course.course_name,course.faculty_name,course.class_date,course.class_time,"
+                     "course.fee,course.duration,studentenrollment.studentid from course "
+                     " join studentenrollment on studentenrollment.courseid=course.cno where studentenrollment.studentid=?",(id,))
 
     res = curs.fetchall()
-    # print(res)
+    print(res)
     return render_template('viewenrollcourse.html',data=res)
 
 @app.route('/cancelenroll')
 def cancelEnroll():
     cno=request.args.get('cno')
+    id = session['id']
     conn = sql.connect("mounika.sqlite2")
     curs = conn.cursor()
     curs.execute("delete from studentenrollment where courseid=?",(cno,))
     conn.commit()
-    curs.execute(
-        "select course.cno,course.course_name,course.faculty_name,course.class_date,course.class_time,course.fee,course.duration from course"
-        " join studentenrollment on studentenrollment.courseid=course.cno")
+    curs.execute("select course.cno,course.course_name,course.faculty_name,course.class_date,course.class_time,"
+                 "course.fee,course.duration,studentenrollment.studentid from course "
+                 " join studentenrollment on studentenrollment.courseid=course.cno where studentenrollment.studentid=?",
+                 (id,))
 
     res = curs.fetchall()
     return render_template('viewenrollcourse.html',data=res)
+
+@app.route('/logout')
+def logout():
+
+    session['id']='None'
+    session['user'] = 'None'
+    return render_template('student_login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
