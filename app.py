@@ -97,7 +97,7 @@ def deleteClass():
     conn.commit()
     return viewScheduleClass()
 
-@app.route('/')
+@app.route('/main')
 def student():
     conn = sql.connect("mounika.sqlite2")
     curs = conn.cursor()

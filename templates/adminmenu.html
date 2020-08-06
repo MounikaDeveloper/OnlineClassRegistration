@@ -10,16 +10,16 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-4 mt-lg-2">
       <li class="nav-item active">
-        <a class="nav-link" href="http://127.0.0.1:5000/adminwelcome">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('adminWelcome') }}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:5000/scheduleclass">Schedule New Class</a>
+        <a class="nav-link" href="{{ url_for('scheduleNewClass') }}">Schedule New Class</a>
       </li>
       <li class="nav-item-danger">
-        <a class="nav-link" href="http://127.0.0.1:5000/viewscheduleclass">View All Scheduled Classes</a>
+        <a class="nav-link" href="{{ url_for('viewScheduleClass') }}">View All Scheduled Classes</a>
       </li>
         <li class="nav-item-danger">
-        <a class="nav-link" href="http://127.0.0.1:5000/admin">Logout</a>
+        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
       </li>
     </ul>
 
