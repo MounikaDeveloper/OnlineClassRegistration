@@ -5,7 +5,7 @@ from flask import session
 from datetime import timedelta
 import sqlite3 as sql
 
-app = Flask(__name__)
+app= Flask(__name__)
 
 app.secret_key="mouni" #session secret key was set
 app.permanent_session_lifetime=timedelta(minutes=5) #session time was set
