@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85ca999e-4cc9-4c99-a624-4246aa78d5cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/enrollcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/enrollcourse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/scheduleclass.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/scheduleclass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/student_registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/viewclass.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewclass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/viewenrollcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewenrollcourse.html" afterDir="false" />
-    </list>
+    <list default="true" id="85ca999e-4cc9-4c99-a624-4246aa78d5cc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +192,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="527" />
     <option name="width" value="834" />
     <option name="height" value="744" />
@@ -264,7 +255,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
