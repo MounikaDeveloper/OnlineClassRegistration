@@ -1,7 +1,7 @@
 {% extends 'common.html' %}
 {% block pwn %}
     {% include 'adminmenu.html' %}
-  <form action="http://127.0.0.1:5000/savecourse" method="post">
+  <form action="{{ url_for('saveCourse') }}" method="post">
   <table align="center" style="margin-top: 2%" border="2">
       <tr style="color: darkorchid">
           <th><h3>Schedule New class</h3></th>

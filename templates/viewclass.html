@@ -22,12 +22,12 @@
             <th>{{ y }}</th>
             {% endfor %}
         <th>
-            <a href="http://127.0.0.1:5000/updateclass?u={{ x[0] }}">
+            <a href="{{ url_for('updateClass') }}?u={{ x[0] }}">
                 <img src="{{ url_for('static',filename='images/update.png')}}" >
             </a>
         </th>
          <th>
-            <a href="http://127.0.0.1:5000/deleteclass?u={{ x[0] }}">
+            <a href="{{ url_for('updateClass') }}?u={{ x[0] }}">
                 <img src="{{ url_for('static',filename='images/delete.png')}}" >
             </a>
         </th>

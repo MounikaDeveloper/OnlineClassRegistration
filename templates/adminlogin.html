@@ -6,7 +6,7 @@
         padding-top: 5%;
     }
     </style>
-    <form action="http://127.0.0.1:5000/validate_admin" method="post">
+    <form action="{{ url_for('validateAdmin') }}" method="post">
     <div style="margin-left: 30%">
         <h2 style="margin-left: 15%;padding-bottom: 2%">Admin Login</h2>
       <div class="form-group row">

@@ -30,7 +30,7 @@
                  <th>{{ x[5] }}</th>
                  <th>{{ x[6] }}</th>
          <th>{{ x[7] }}</th>
-         <th><a href="http://127.0.0.1:5000/cancelenroll?cno={{ x[0] }}">Yes</a></th>
+         <th><a href="{{ url_for('cancelEnroll') }}?cno={{ x[0] }}">Yes</a></th>
                 {% endfor %}
 
     </tr>
