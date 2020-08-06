@@ -5,16 +5,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('main') }}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('student') }}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('register') }}">Enroll the Courses</a>
+        <a class="nav-link" href="{{ url_for('enrollcourse') }}">Enroll the Courses</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('viewenrolledcourse') }}">View the enrolled course</a>
+        <a class="nav-link" href="{{ url_for('viewEnrolledCourse') }}">View the enrolled course</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('viewenrolledcourse') }}">Cancel the enrolled course</a>
+        <a class="nav-link" href="{{ url_for('viewEnrolledCourse') }}">Cancel the enrolled course</a>
       </li>
          <li class="nav-item">
         <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>

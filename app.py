@@ -8,11 +8,11 @@ import sqlite3 as sql
 app= Flask(__name__)
 
 app.secret_key="mouni" #session secret key was set
-app.permanent_session_lifetime=timedelta(minutes=5) #session time was set
+app.permanent_session_lifetime=timedelta(minutes=30) #session time was set
 
 
-conn = sql.connect("mounika.sqlite2")
-curs = conn.cursor()
+# conn = sql.connect("mounika.sqlite2")
+# curs = conn.cursor()
 @app.route('/admin')
 def admin_login():
     return render_template('adminlogin.html')
@@ -64,6 +64,7 @@ def viewScheduleClass():
     curs = conn.cursor()
     curs.execute("select * from course")
     res=curs.fetchall()
+    conn.close()
     return render_template('viewclass.html',data=res)
 
 @app.route('/updateclass')
@@ -73,6 +74,7 @@ def updateClass():
     curs = conn.cursor()
     curs.execute("select *from course where cno=?",(no,))
     res = curs.fetchone()
+    conn.close()
     return render_template('update_scheduleclass.html',data=res)
 
 @app.route('/update',methods=['POST'])
@@ -89,6 +91,7 @@ def update():
     curs = conn.cursor()
     res=curs.execute("update course SET course_name=?,faculty_name=?,class_date=?,class_time=?,fee=?,duration=? where cno=?", (name,faculty,date,time,fee,duration,no))
     conn.commit()
+    conn.close()
     return viewScheduleClass()
 
 @app.route('/deleteclass')
@@ -99,14 +102,16 @@ def deleteClass():
     res = curs.execute(
         "delete from course where cno=?",(no,))
     conn.commit()
+    conn.close()
     return viewScheduleClass()
 
 @app.route('/main')
 def student():
-    conn = sql.connect("mounika.sqlite2")
+    conn = sql.connect("mounika.sqlite2",check_same_thread=False)
     curs = conn.cursor()
     curs.execute("select *from course")
     res = curs.fetchall()
+    conn.close()
     return render_template('main.html',data=res)
 
 @app.route('/register')
@@ -147,6 +152,7 @@ def student_login():
     curs = conn.cursor()
     curs.execute("select *from student_registration")
     res = curs.fetchall()
+    conn.close()
     # print(res)
     for x in res:
         if uname==x[1] and pwd==x[4]:
@@ -161,10 +167,13 @@ def student_login():
 
 @app.route('/enrollcourse')
 def enrollcourse():
-    # conn = sql.connect("mounika.sqlite2")
-    # curs = conn.cursor()
+    conn = sql.connect("mounika.sqlite2")
+    curs = conn.cursor()
+    id = session['id']
+    print(id)
     curs.execute("Select *from course")
     res=curs.fetchall()
+    conn.close()
     return render_template('enrollcourse.html',data=res)
 
 @app.route('/enrollsave',methods=['GET'])
@@ -175,17 +184,20 @@ def enrollsave():
     curs = conn.cursor()
     curs.execute("select *from studentenrollment")
     res=curs.fetchall()
+
     if res:
         print(res)
         for x in res:
             if x[1]==int(cno) and x[0]==id:
                 curs.execute("Select *from course")
                 res = curs.fetchall()
+
                 return render_template('enrollcourse.html',data1="Course already registered",data=res)
 
 
     curs.execute("insert into studentenrollment values(?,?)", (id, cno))
     conn.commit()
+    conn.close()
 
     return render_template('viewallenrolledcourses.html')
 
@@ -201,6 +213,7 @@ def viewEnrolledCourse():
 
     res = curs.fetchall()
     print(res)
+    conn.close()
     return render_template('viewenrollcourse.html',data=res)
 
 @app.route('/cancelenroll')
@@ -217,6 +230,7 @@ def cancelEnroll():
                  (id,))
 
     res = curs.fetchall()
+    conn.close()
     return render_template('viewenrollcourse.html',data=res)
 
 @app.route('/logout')
