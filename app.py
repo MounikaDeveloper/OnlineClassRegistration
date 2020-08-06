@@ -9,6 +9,10 @@ app= Flask(__name__)
 
 app.secret_key="mouni" #session secret key was set
 app.permanent_session_lifetime=timedelta(minutes=5) #session time was set
+
+
+conn = sql.connect("mounika.sqlite2")
+curs = conn.cursor()
 @app.route('/admin')
 def admin_login():
     return render_template('adminlogin.html')
@@ -157,8 +161,8 @@ def student_login():
 
 @app.route('/enrollcourse')
 def enrollcourse():
-    conn = sql.connect("mounika.sqlite2")
-    curs = conn.cursor()
+    # conn = sql.connect("mounika.sqlite2")
+    # curs = conn.cursor()
     curs.execute("Select *from course")
     res=curs.fetchall()
     return render_template('enrollcourse.html',data=res)
