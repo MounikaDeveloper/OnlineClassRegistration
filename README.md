@@ -15,6 +15,8 @@ In the admin module admin, admin login with his credentials like username and pa
 
 In the student module,student first register with his name,contactus,email and password.After registration only student can login,validating the student details.student enroll the course,view all the enrolled course and cancel the enrolled course.
 
-Used sessions to get id and name, and also logout
+Used sessions to get id and name, and also logout.
+
+Deployed in heroku.
 
  
