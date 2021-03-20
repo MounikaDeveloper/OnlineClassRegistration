@@ -35,7 +35,7 @@ importlib-resources==1.5.0
 influxalchemy==0.2.5
 influxdb==5.2.2
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 kiwisolver==1.1.0
 Markdown==3.1.1
 MarkupSafe==1.1.1
