@@ -57,7 +57,7 @@ psycopg2==2.8.3
 py==1.8.1
 pycparser==2.20
 pydub==0.23.1
-Pygments==2.4.2
+Pygments==2.7.4
 pymongo==3.8.0
 PyMySQL==0.9.3
 pyparsing==2.4.6
