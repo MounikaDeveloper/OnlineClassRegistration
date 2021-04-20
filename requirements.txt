@@ -54,7 +54,7 @@ pipenv==2020.6.2
 plotly==4.8.1
 pluggy==0.13.1
 psycopg2==2.8.3
-py==1.8.1
+py==1.10.0
 pycparser==2.20
 pydub==0.23.1
 Pygments==2.4.2
